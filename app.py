@@ -57,5 +57,9 @@ def delete_user(student_id):
     return redirect(url_for("index"))
     
 if __name__=='__main__':
-    app.secret_key='admin123'
+    # app.secret_key='admin123'
+    # Set the secret key to some random bytes. Keep this really secret!
+    # app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+    secret = secrets.token_urlsafe(32)
+    app.secret_key = secret
     app.run(debug=True)
