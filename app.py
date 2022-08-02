@@ -2,6 +2,7 @@ from flask import Flask,render_template,request,redirect,url_for,flash
 import sqlite3 as sql
 import secrets
 app=Flask(__name__)
+app.secret_key='admin123'
 
 @app.route("/")
 @app.route("/index")
@@ -61,6 +62,4 @@ if __name__=='__main__':
     # app.secret_key='admin123'
     # Set the secret key to some random bytes. Keep this really secret!
     # app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-    secret = secrets.token_urlsafe(32)
-    app.secret_key = secret
-    app.run(debug=True)
+    app.run()
